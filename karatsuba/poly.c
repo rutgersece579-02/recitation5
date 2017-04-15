@@ -108,9 +108,12 @@ void printString(Polynomial *p) {
 // C = c[0:2*n-1]
 // This routine is used for the "small n" basecase in Karatsuba multiplication.
 void simple_mul(int *c, const int *a, const int *b, size_t n) {
-    c[0:2*n-1] = 0;
-    for (size_t i = 0; i < n; ++i)
-        c[i:n] += a[i] * b[0:n];
+   for (size_t j=0; j<2*n-1; ++j)
+        c[j] = 0;
+
+    for (size_t i=0; i<n; ++i)
+        for (size_t j=0; j<n; ++j)
+            c[i+j] += a[i]*b[j];
 }
 
 // Polynomial multiplication C=A*B.

@@ -1,11 +1,12 @@
-CC=gcc
+CC=icc
 
 #results dumped by cilkview objects
 VIEWS = main
 
 CFLAGS= -std=gnu99 -Wall -O3 -fcilkplus
 LDFLAGS= -ldl -lcilkrts
-INCLUDES = -I/afs/csail.mit.edu/proj/courses/6.172/cilkutil/include
+#INCLUDES = -I/afs/csail.mit.edu/proj/courses/6.172/cilkutil/include
+INCLUDES =
 
 all: main
 
